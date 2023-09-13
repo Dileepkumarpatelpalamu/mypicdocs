@@ -6,7 +6,7 @@ from django.views import View
 class Home(View):
     def get(self, request,*args,**kwargs):
         context = {}
-        if 'searchText' in request.session:
+        if 'searchText' in request.session and (request.session['searchText'] !="" or request.session['searchText'] is None) :
             search_text = request.session.get('searchText')
             image_data  = ImageUpload.objects.filter(image_category__category=search_text).values()
         else:
