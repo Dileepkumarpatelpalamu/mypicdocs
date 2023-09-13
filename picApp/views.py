@@ -1,22 +1,32 @@
 from django.shortcuts import render
 from .models import ImageUpload
+from django.views import View
 # Create your views here.
 
-def home(request):
-    context = {}
-    if request.method == "POST":
+class Home(View):
+    def get(self, request,*args,**kwargs):
+        context = {}
+        if 'searchText' in request.session:
+            search_text = request.session.get('searchText')
+            image_data  = ImageUpload.objects.filter(image_category__category=search_text).values()
+        else:
+            image_data = ImageUpload.objects.all().values()
+        context['image_data'] = image_data
+        return render(request, 'index.html', context)
+    def post(self,request,*args,**kwargs):
+        context = {}
         search_text = request.POST.get('search')
-        if search_text is not None and search_text != "" :
+        if request.POST.get('btncancel') == 'cancel':
+            search_text = ""
+            del request.session['searchText']
+        if(search_text !="" and search_text is not None):
             request.session['searchText'] = search_text
-            context['image_data']   = ImageUpload.objects.filter(image_category__category=search_text).values()
+            image_data  = ImageUpload.objects.filter(image_category__category=search_text).values()
         else:
-            context['image_data'] = ImageUpload.objects.all().values()
-    else:
-        if(request.session.get('searchText')):
-            context['image_data'] = ImageUpload.objects.filter(image_category__category=request.session.get('searchText')).values()
-        else:
-            context['image_data'] = ImageUpload.objects.all().values()
-    return render(request,'index.html',context)
+            request.session['searchText'] = search_text
+            image_data = ImageUpload.objects.all().values()
+        context['image_data'] = image_data
+        return render(request,'index.html',context)
 def login(request):
     return render(request,'login.html')
 def signup(request):

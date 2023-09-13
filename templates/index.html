@@ -42,11 +42,11 @@
                 {% csrf_token %}
                 <div class="col-auto">
                   <div>
-                    <input type="text" name="search" value="{{request.session.searchText}}" class="form-control" id="search" placeholder="Search" />
+                    <input type="text" name="search" value="{% if request.session.searchText %}{{ request.session.searchText }}{% endif %}" class="form-control" id="search" placeholder="Search" />
                   </div>
                 </div>
-                <button type="submit" name="submit" class="quote_btn">Search</button>
-                <button type="submit" name="submit" class="quote_btn mx-2">clear</button>
+                <button type="submit" name="btnsubmit" value="submit" class="quote_btn">Search</button>
+                <button type="submit" name="btncancel" value="cancel" class="quote_btn mx-2">clear</button>
               </form>
             </div>
           </div>
