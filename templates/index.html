@@ -30,12 +30,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact Us</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#signup">Signup</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#login">SignIn</a>
-              </li>
             </ul>
             <div class="quote_btn-container">
               <form class="form_container d-flex" method="post" action="/">
@@ -45,8 +39,8 @@
                     <input type="text" name="search" value="{% if request.session.searchText %}{{ request.session.searchText }}{% endif %}" class="form-control" id="search" placeholder="Search" />
                   </div>
                 </div>
-                <button type="submit" name="btnsubmit" value="submit" class="quote_btn">Search</button>
-                <button type="submit" name="btncancel" value="cancel" class="quote_btn mx-2">clear</button>
+                <button type="submit" name="btnsubmit" value="submit" class="quote_btn" style="background-color: #5a2a8f;border: 1px solid #5a2a8f;">Search</button>
+                <button type="submit" name="btncancel" value="cancel" class="quote_btn mx-2" style="background-color: #5a2a8f;border: 1px solid #5a2a8f;">clear</button>
               </form>
             </div>
           </div>
@@ -59,24 +53,26 @@
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          {% if configs.sliders %}
+          {% for slider in configs.sliders %}
+          <div class="carousel-item {% if forloop.first %} active {% endif %}">
             <div class="container ">
               <div class="row">
                 <div class="col-md-6">
                   <div class="img-box">
-                    <img src="{% static 'images/slider-img.png' %}" alt="">
+                    <img src="{{slider.image}}" alt="{{slider.alttext}}">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="detail-box">
                     <h1>
-                      Digital Marketing Experts
+                      {{slider.title}}
                     </h1>
                     <p>
-                      Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
+                      {{slider.description}}
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href="{{slider.link}}" class="btn1">
                         Contact Us
                       </a>
                     </div>
@@ -85,58 +81,8 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item ">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="{% static 'images/slider-img.png' %}" alt="">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>
-                      Digital Marketing Experts
-                    </h1>
-                    <p>
-                      Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact Us
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="img-box">
-                    <img src="{% static 'images/slider-img.png' %}" alt="">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="detail-box">
-                    <h1>
-                      Digital Marketing Experts
-                    </h1>
-                    <p>
-                      Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.
-                    </p>
-                    <div class="btn-box">
-                      <a href="" class="btn1">
-                        Contact Us
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
+          {% endif %}
         </div>
         <ol class="carousel-indicators">
           <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
@@ -147,6 +93,7 @@
 
     </section>
     <!-- end slider section -->
+    {{configs}}
   </div>
   {% endblock %}
   {% block content %}
@@ -199,90 +146,31 @@
         </p>
       </div>
       <div class="row">
+        {% if configs.services %}
+        {% for service in configs.services %}
         <div class="col-md-6 col-lg-3">
           <div class="box">
             <div class="img-box">
-              <img src="{% static 'images/s1.png' %}" alt="">
+              <img src="{{service.images}}" alt="">
             </div>
             <div class="detail-box">
               <h5>
-                Link Building
+                {{service.title}}
               </h5>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                {{service.description}}
               </p>
-              <a href="">
+              <a href="{{service.link}}">
                 <span>
                   Read More
                 </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                <i class="{{service.class}}" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="{% static 'images/s2.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                On page SEO
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="{% static 'images/s3.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Online Marketing
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="box">
-            <div class="img-box">
-              <img src="{% static 'images/s4.png' %}" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Email Marketing
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        {% endif %}
       </div>
       <div class="btn-box">
         <a href="">
@@ -303,14 +191,11 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                About Us
+                {{configs.about.title}}
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+              {{configs.about.sort_summary}}
             </p>
             <a href="">
               Read More
@@ -319,7 +204,7 @@
         </div>
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="{% static 'images/about-img.png' %}" alt="">
+            <img src="{{configs.about.image}}" alt="{{configs.about.alttext}}">
           </div>
         </div>
 
@@ -335,23 +220,24 @@
     <div class="container">
       <div class="heading_container">
         <h2>
-          Our Case Studies
+          Our Blogs
         </h2>
       </div>
       <div class="row">
+        {% for blog in configs.blogs%}
         <div class="col-md-6">
           <div class="box">
             <div class="img-box">
-              <img src="{% static 'images/case-1.jpg' %}" alt="">
+              <img src="{{blog.image}}" alt="">
             </div>
             <div class="detail-box">
               <h5>
-                Sit amet consectetur adipisicing elit
+                {{blog.title}}
               </h5>
               <p>
-                Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                {{blog.summary_details}}
               </p>
-              <a href="">
+              <a href="{{blog.link}}">
                 <span>
                   Read More
                 </span>
@@ -360,27 +246,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="box">
-            <div class="img-box">
-              <img src="{% static 'images/case-2.jpg' %}"  alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Excepturi placeat nihil eos maxime
-              </h5>
-              <p>
-                Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-              </p>
-              <a href="">
-                <span>
-                  Read More
-                </span>
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -392,40 +258,36 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Testimonial
+          Our Team
         </h2>
       </div>
     </div>
     <div id="customCarousel2" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        {% if configs.our_team %}
+        {% for employee in configs.our_team %}
+        <div class="carousel-item {% if forloop.first %} active {% endif %}">
           <div class="container">
             <div class="row">
               <div class="col-md-10 mx-auto">
                 <div class="box">
                   <div class="img-box">
-                    <img src="{% static 'images/client.jpg' %}" alt="">
+                    <img src="{{employee.image}}" alt="">
                   </div>
                   <div class="detail-box">
                     <div class="client_info">
                       <div class="client_name">
                         <h5>
-                          Morojink
+                          {{employee.name}}
                         </h5>
                         <h6>
-                          Customer
+                          {{employee.digination}}
                         </h6>
                       </div>
                       <i class="fa fa-quote-left" aria-hidden="true"></i>
                     </div>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                      labore
-                      et
-                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum
-                      dolore eu fugia
+                      {{employee.carrer_summary}}
                     </p>
                   </div>
                 </div>
@@ -433,76 +295,8 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-10 mx-auto">
-                <div class="box">
-                  <div class="img-box">
-                    <img src="{% static 'images/client.jpg' %}" alt="">
-                  </div>
-                  <div class="detail-box">
-                    <div class="client_info">
-                      <div class="client_name">
-                        <h5>
-                          Morojink
-                        </h5>
-                        <h6>
-                          Customer
-                        </h6>
-                      </div>
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                      labore
-                      et
-                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum
-                      dolore eu fugia
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-10 mx-auto">
-                <div class="box">
-                  <div class="img-box">
-                    <img src="{% static 'images/client.jpg' %}" alt="">
-                  </div>
-                  <div class="detail-box">
-                    <div class="client_info">
-                      <div class="client_name">
-                        <h5>
-                          Morojink
-                        </h5>
-                        <h6>
-                          Customer
-                        </h6>
-                      </div>
-                      <i class="fa fa-quote-left" aria-hidden="true"></i>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                      labore
-                      et
-                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum
-                      dolore eu fugia
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        {% endif %}
       </div>
       <ol class="carousel-indicators">
         <li data-target="#customCarousel2" data-slide-to="0" class="active"></li>
@@ -521,6 +315,9 @@
   <section class="contact_section layout_padding">
     <div class="container-fluid">
       <div class="row">
+        <div class="col-md-3 col-lg-3">
+          
+        </div>
         <div class="col-md-5 col-lg-4 offset-md-1">
           <div class="form_container">
             <div class="heading_container">
@@ -542,12 +339,15 @@
                 <input type="text" class="message-box" placeholder="Message" />
               </div>
               <div class="d-flex ">
-                <button>
+                <button class="col-12">
                   SEND
                 </button>
               </div>
             </form>
           </div>
+        </div>
+        <div class="col-md-3 col-lg-3">
+          
         </div>
       </div>
     </div>
@@ -563,10 +363,10 @@
           <div class="col-md-6 col-lg-3 ">
             <div class="info_detail">
               <h4>
-                Digian
+                {{configs.footer.title}}
               </h4>
               <p>
-                Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+                {{configs.footer.description}}
               </p>
             </div>
           </div>
@@ -587,12 +387,6 @@
                 </a>
                 <a class="" href="#contact">
                   Contact Us
-                </a>
-                <a class="" href="#signup">
-                  SignUp
-                </a>
-                <a class="" href="#login">
-                  SignUp
                 </a>
               </div>
             </div>
@@ -617,36 +411,31 @@
                 <a href="">
                   <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>
-                    Location
+                    {{configs.footer.address.location}}
                   </span>
                 </a>
                 <a href="">
                   <i class="fa fa-phone" aria-hidden="true"></i>
                   <span>
-                    Call +01 1234567890
+                    {{configs.footer.address.contact}}
                   </span>
                 </a>
                 <a href="">
                   <i class="fa fa-envelope" aria-hidden="true"></i>
                   <span>
-                    demo@gmail.com
+                    {{configs.footer.address.email}}
                   </span>
                 </a>
               </div>
             </div>
             <div class="info_social">
-              <a href="">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
+              {% if configs.footer.social_media %}
+              {% for social_link,social_link_data in configs.footer.social_media.items %}
+              <a href="{{social_link_data.1}}">
+                <i class="{{social_link_data.0}}" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
+              {% endfor %}
+              {% endif %}
             </div>
           </div>
         </div>

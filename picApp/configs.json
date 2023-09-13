@@ -1,0 +1,116 @@
+{
+  "sliders": [
+    {
+      "title": "Digital Marketing Experts",
+      "description": "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.",
+      "link": "/static/images/slider-img.png",
+      "image": "/static/images/slider-img.png",
+      "alttext": "slider-1"
+    },
+    {
+      "title": "Digital Marketing Experts",
+      "description": "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.",
+      "link": "/static/images/slider-img.png",
+      "image": "/static/images/slider-img.png",
+      "alttext": "slider-2"
+    },
+    {
+      "title": "Digital Marketing Experts",
+      "description": "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.",
+      "link": "/static/images/slider-img.png",
+      "image": "/static/images/slider-img.png",
+      "alttext": "slider-3"
+    }
+  ],
+  "about": {
+    "title": "About Us",
+    "sort_summary": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All",
+    "detail_summary": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All",
+    "image": "/static/images/about-img.png",
+    "alttext": ""
+  },
+  "services": [
+    {
+      "title": "Link Building",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "images": "/static/images/s1.png",
+      "alttext": "service-1",
+      "class": "fa fa-long-arrow-right",
+      "link": "/static/images/s1.png"
+    },
+    {
+      "title": "On page SEO",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "images": "/static/images/s2.png",
+      "alttext": "service-2",
+      "class": "fa fa-long-arrow-right",
+      "link": "/static/images/s2.png"
+    },
+    {
+      "title": "Online Marketing",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "images": "/static/images/s3.png",
+      "alttext": "service-3",
+      "class": "fa fa-long-arrow-right",
+      "link": "/static/images/s3.png"
+    },
+    {
+      "title": "Email Marketing",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,,",
+      "images": "/static/images/s3.png",
+      "alttext": "service-4",
+      "class": "fa fa-long-arrow-right",
+      "link": "/static/images/s4.png"
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Sit amet consectetur adipisicing elit",
+      "summary_details": "Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+      "image": "/static/images/case-1.jpg",
+      "link": ""
+    },
+    {
+      "title": "Excepturi placeat nihil eos maxime",
+      "summary_details": "Alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+      "image": "/static/images/case-2.jpg",
+      "link": ""
+    }
+  ],
+  "our_team": [
+    {
+      "name": "Dileep Kumar Patel",
+      "digination": "Jr. Software Engineer",
+      "carrer_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia",
+      "image": "/static/images/client.jpg"
+    },
+    {
+      "name": "Dhiraj Kumar",
+      "digination": "UI Designer",
+      "carrer_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia",
+      "image": "/static/images/client.jpg"
+    },
+    {
+      "name": "Dileep Kumar Patel",
+      "digination": "Backend Developer",
+      "carrer_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia",
+      "image": "/static/images/client.jpg"
+    }
+  ],
+  "footer": {
+    "title": "MyPicDocs",
+    "description": "Alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
+    "address": {
+      "location": "Gurgaon",
+      "contact": "8409900949",
+      "email": "pateldileep@gmail.com"
+    },
+    "social_media": {
+      "facebook": ["fa fa-facebook", ""],
+      "twitter": ["fa fa-twitter", ""],
+      "linkdin": ["fa fa-linkedin", ""],
+      "insta": ["fa fa-facebook", ""],
+      "youtube": ["fa fa-instagram", ""]
+    }
+  }
+}
