@@ -1,22 +1,22 @@
 {
   "sliders": [
     {
-      "title": "Digital Marketing Experts",
-      "description": "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.",
+      "title": "UI Design",
+      "description": "User interface (UI) design is the process designers use to build interfaces in software or computerized devices, focusing on looks or style. Designers aim to create interfaces which users find easy to use and pleasurable",
       "link": "/static/images/slider-img.png",
       "image": "/static/images/slider-img.png",
-      "alttext": "slider-1"
+      "alttext": "ui-design"
     },
     {
-      "title": "Digital Marketing Experts",
-      "description": "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.",
+      "title": "Api Service",
+      "description": "API (Application Programming Interface) development involves creating a set of rules and protocols that allow different software applications to communicate and interact with each other.",
       "link": "/static/images/slider-img.png",
       "image": "/static/images/slider-img.png",
       "alttext": "slider-2"
     },
     {
-      "title": "Digital Marketing Experts",
-      "description": "Aenean scelerisque felis ut orci condimentum laoreet. Integer nisi nisl, convallis et augue sit amet, lobortis semper quam.",
+      "title": "Responsive Web Development",
+      "description": "Responsive web development is essential for reaching a wide audience and providing a positive user experience across different devices. ",
       "link": "/static/images/slider-img.png",
       "image": "/static/images/slider-img.png",
       "alttext": "slider-3"
@@ -24,39 +24,39 @@
   ],
   "about": {
     "title": "About Us",
-    "sort_summary": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All",
-    "detail_summary": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All",
+    "sort_summary": "MyPicDocs has been under the capable management of Dileep Kumar Patel and Dhiraj Kumar. Over the years, our company has experienced significant growth and diversification, evolving into a nationwide leader in managed IT services and solutions. We take pride in offering a comprehensive range of IT products and services. Our team of IT experts is highly specialized in various cutting-edge technologies, allowing us to provide top-notch solutions tailored to the unique needs of our clients. We primarily focus on serving small and medium-sized enterprises (SMEs) and play a pivotal role in assisting them in their growth journeys",
+    "detail_summary": "MyPicDocs has been under the capable management of Dileep Kumar Patel and Dhiraj Kumar. Over the years, our company has experienced significant growth and diversification, evolving into a nationwide leader in managed IT services and solutions. We take pride in offering a comprehensive range of IT products and services. Our team of IT experts is highly specialized in various cutting-edge technologies, allowing us to provide top-notch solutions tailored to the unique needs of our clients. We primarily focus on serving small and medium-sized enterprises (SMEs) and play a pivotal role in assisting them in their growth journeys",
     "image": "/static/images/about-img.png",
     "alttext": ""
   },
   "services": [
     {
-      "title": "Link Building",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "title": "UI Design",
+      "description": "UI design updated with industry trends and emerging technologies to create modern websites",
       "images": "/static/images/s1.png",
       "alttext": "service-1",
       "class": "fa fa-long-arrow-right",
       "link": "/static/images/s1.png"
     },
     {
-      "title": "On page SEO",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "title": "SEO Services",
+      "description": "SEO services are essential for improving a website's visibility on search engines",
       "images": "/static/images/s2.png",
       "alttext": "service-2",
       "class": "fa fa-long-arrow-right",
       "link": "/static/images/s2.png"
     },
     {
-      "title": "Online Marketing",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "title": "Graphics Design",
+      "description": "Graphic design is a creative discipline that combines visual art, typography, and technology to communicate ideas and messages effectively through visual content.",
       "images": "/static/images/s3.png",
       "alttext": "service-3",
       "class": "fa fa-long-arrow-right",
       "link": "/static/images/s3.png"
     },
     {
-      "title": "Email Marketing",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,,",
+      "title": "Api Service",
+      "description": "Application Programming Interface development involves creating a set of rules and protocols that allow different software applications to communicate and interact with each other",
       "images": "/static/images/s3.png",
       "alttext": "service-4",
       "class": "fa fa-long-arrow-right",
@@ -99,7 +99,7 @@
   ],
   "footer": {
     "title": "MyPicDocs",
-    "description": "Alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
+    "description": "Our company has experienced significant growth and diversification, evolving into a nationwide leader in managed IT services and solutions",
     "address": {
       "location": "Gurgaon",
       "contact": "8409900949",

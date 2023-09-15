@@ -10,9 +10,10 @@ class Home(View):
         context = {}
         if 'searchText' in request.session and (request.session['searchText'] !="" or request.session['searchText'] is None) :
             search_text = request.session.get('searchText')
-            image_data  = ImageUpload.objects.filter(image_category__category=search_text).values()
+            image_data  = ImageUpload.objects.filter(image_category__category=search_text).values().order_by('-upload_date')
         else:
-            image_data = ImageUpload.objects.all().values()
+            image_data = ImageUpload.objects.all().values().order_by('-upload_date')
+
         context['image_data'] = image_data
         context['configs'] = configs
         return render(request, 'index.html', context)
@@ -25,7 +26,7 @@ class Home(View):
             del request.session['searchText']
         if(search_text !="" and search_text is not None):
             request.session['searchText'] = search_text
-            image_data  = ImageUpload.objects.filter(image_category__category=search_text).values()
+            image_data  = ImageUpload.objects.filter(image_category__category=search_text).values().order_by('-upload_date')
         else:
             request.session['searchText'] = search_text
             image_data = ImageUpload.objects.all().values()

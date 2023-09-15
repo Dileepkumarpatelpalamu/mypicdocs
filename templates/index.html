@@ -7,9 +7,9 @@
     <!-- header section strats -->
     <header class="header_section">
       <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <span>
+        <nav class="navbar navbar-expand-lg fixed-top custom_nav-container" style="background-color: #5a2a8f;">
+          <a class="navbar-brand" href="/">
+            <span class="mx-2">
               MyPicDocs
             </span>
           </a>
@@ -18,7 +18,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  ">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="#index">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
@@ -49,7 +49,7 @@
     </header>
     <!-- end header section -->
     <!-- slider section -->
-    <a name="#index"></a>
+    <a name="index"></a>
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -157,7 +157,7 @@
                 {{service.title}}
               </h5>
               <p>
-                {{service.description}}
+                {{ service.description|truncatewords:10 }}
               </p>
               <a href="{{service.link}}">
                 <span>
@@ -194,7 +194,7 @@
               </h2>
             </div>
             <p>
-              {{configs.about.sort_summary}}
+              {{configs.about.sort_summary|truncatewords:50}}
             </p>
             <a href="">
               Read More
