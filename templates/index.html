@@ -324,21 +324,22 @@
                 Contact Us
               </h2>
             </div>
-            <form action="">
+            <form action="/sendmail/" id="contactForm" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
               <div>
-                <input type="text" placeholder="Full Name " />
+                <input type="text" name="fullName" id="fullName" placeholder="Full Name " />
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" name="email" id="email" placeholder="Email" />
               </div>
               <div>
-                <input type="text" placeholder="Phone number" />
+                <input type="text" name="phoneNo" id="phoneNo" placeholder="Phone number" />
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="text" name="messageBox" id="messageBox" class="message-box" placeholder="Message" />
               </div>
               <div class="d-flex ">
-                <button class="col-12">
+                <button class="col-12" type="submit" name="submit" value="SEND">
                   SEND
                 </button>
               </div>
