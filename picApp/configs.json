@@ -81,29 +81,29 @@
     {
       "name": "Dileep Kumar Patel",
       "digination": "Jr. Software Engineer",
-      "carrer_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia",
+      "carrer_summary": "A Django developer is a web based professional with expertise in creating web applications using the Django framework, a powerful Python-based web framework. Their role involves crafting, developing, and deploying web applications that align with client needs while adhering to industry best practices for software development, code management, and testing. These developers often employ web content management systems to facilitate the creation and maintenance of web applications. In today's tech landscape, they also delve into gaining a deeper understanding of Python web frameworks such as Flask and Django to enhance their skills and provide clients with improved web solutions.",
       "image": "/static/images/client.jpg"
     },
     {
       "name": "Dhiraj Kumar",
       "digination": "UI Designer",
-      "carrer_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia",
+      "carrer_summary": "",
       "image": "/static/images/client.jpg"
     },
     {
       "name": "Dileep Kumar Patel",
       "digination": "Backend Developer",
-      "carrer_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugia",
+      "carrer_summary": "A Django developer is a software professional with expertise in creating web applications using the Django framework, a powerful Python-based web framework. Their role involves crafting, developing, and deploying web applications that align with client needs while adhering to industry best practices for software development, code management, and testing. These developers often employ web content management systems to facilitate the creation and maintenance of web applications. In today's tech landscape, they also delve into gaining a deeper understanding of Python web frameworks such as Flask and Django to enhance their skills and provide clients with improved web solutions.",
       "image": "/static/images/client.jpg"
     }
   ],
   "footer": {
     "title": "MyPicDocs",
-    "description": "Our company has experienced significant growth and diversification, evolving into a nationwide leader in managed IT services and solutions",
+    "description": "Our plateform has experienced significant growth and diversification, evolving into a nationwide leader in managed IT services and solutions",
     "address": {
       "location": "Gurgaon",
-      "contact": "8409900949",
-      "email": "pateldileep@gmail.com"
+      "contact": "9304911556",
+      "email": "mypicdocsgurgaon@gmail.com"
     },
     "social_media": {
       "facebook": ["fa fa-facebook", ""],

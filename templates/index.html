@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 <body>
   {% block header_section %}
   {% load static %}
@@ -37,6 +38,7 @@
                 <div class="col-auto">
                   <div>
                     <input type="text" name="search" value="{% if request.session.searchText %}{{ request.session.searchText }}{% endif %}" class="form-control" id="search" placeholder="Search" />
+                    <input type="hidden" name="page" value="{{page.number}}">
                   </div>
                 </div>
                 <button type="submit" name="btnsubmit" value="submit" class="quote_btn" style="background-color: #5a2a8f;border: 1px solid #5a2a8f;">Search</button>
@@ -103,9 +105,40 @@
           Our Image Gallery
         </h2>
       </div>
+        <nav aria-label="pagination">
+          <ul class="pagination">
+            {% if page.has_previous %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="page-item"><a class="page-link"> <span class="current_page">{{ page.number }}</span> <span style="font-size: 12px;">/</span> <span class="all_pages">{{page.paginator.page_range | length}}</span> </a></li>
+            {% if page.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
       {% if image_data %}
       <div class="row">
-      {% for imageobject in image_data %} 
+      {% for imageobject in page.object_list %} 
         <div class="col-md-3">
           <div class="box">
             <div class="img-box">
@@ -323,6 +356,17 @@
               <h2>
                 Contact Us
               </h2>
+              {% if messages %}
+                {% for message in messages %}
+                  <div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible"  {% endif %}    role="alert">
+                    {{message}}
+                    <button type="button" style="margin-top: 0px!important;" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  {% endfor %}
+              {% endif %}
+
             </div>
             <form action="/sendmail/" id="contactForm" method="post" enctype="multipart/form-data">
               {% csrf_token %}
@@ -442,3 +486,4 @@
       </div>
     </section>
     {% endblock %}
+    

@@ -145,3 +145,6 @@ EMAIL_PORT = os.getenv('EMAIL_PORT') or 587
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') or 'mypicdocsgurgaon@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') or "vnllcjfmqisnsjse"
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
+
+
