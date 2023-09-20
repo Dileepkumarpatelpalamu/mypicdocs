@@ -143,8 +143,8 @@ EMAIL_HOST = os.getenv('EMAIL_HOST') or 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = os.getenv('EMAIL_PORT') or 587
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') or 'mypicdocsgurgaon@gmail.com'
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') or "vnllcjfmqisnsjse"
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
 DEFAULT_FILE_STORAGE = 'picApp.myStorage.myStorage'
 
