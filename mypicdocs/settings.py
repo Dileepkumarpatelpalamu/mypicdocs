@@ -14,7 +14,8 @@ import MySQLdb
 from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
-
+BASE_PORT = os.getenv("BASE_PORT") or 8000
+BASE_URL = os.getenv("BASE_URL") or f"http://127.0.0.1:{BASE_PORT}"
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -144,7 +145,12 @@ EMAIL_USE_SSL = False
 EMAIL_PORT = os.getenv('EMAIL_PORT') or 587
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') or 'mypicdocsgurgaon@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') or "vnllcjfmqisnsjse"
-
 MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
+DEFAULT_FILE_STORAGE = 'picApp.myStorage.myStorage'
+
+# setting for admin ulr redirect
+LOGIN_URL = 'mylogin/'
+# LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "admin"
 
 
